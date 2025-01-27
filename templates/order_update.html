@@ -1,0 +1,52 @@
+<h1>Редактировать заказ №{{ order.id }} Стол №{{ order.table_number }}</h1>
+
+
+<form method="post" action="{% url 'orders:order_update' order.id %}">
+    {% csrf_token %}
+    <h2>Статус заказа:</h2>
+    <select name="status">
+        <option value="pending" {% if order.status == 'pending' %}selected{% endif %}>В ожидании</option>
+        <option value="ready" {% if order.status == 'ready' %}selected{% endif %}>Готово</option>
+        <option value="paid" {% if order.status == 'paid' %}selected{% endif %}>Оплачено</option>
+    </select>
+    <button type="submit" name="status_change">Сохранить изменения статуса</button>
+    <h2>Доступные блюда для добавления в заказ:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Блюдо</th>
+                <th>Цена</th>
+                <th>Выбрать</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dish in dishes %}
+                <tr>
+                    <td>{{ dish.name }}</td>
+                    <td>{{ dish.price }}₽</td>
+                    <td>
+                        <input type="checkbox" name="dishes" value="{{ dish.id }}">
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="submit">Добавить блюда в заказ</button>
+</form>
+
+<h2>Текущие блюда в заказе:</h2>
+<ul>
+    {% for order_dish in order.orderdishes.all %}
+        <li>
+            {{ order_dish.dish.name }} - {{ order_dish.dish.price }}₽ x {{ order_dish.quantity }}
+            <form action="{% url 'orders:order_remove_dish' order.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="dish_id" value="{{ order_dish.dish.id }}">
+                <button type="submit">Удалить</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+
+
+<a href="{% url 'orders:order_list' %}">Назад</a>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Выручка</title>
+</head>
+<body>
+    <h1>Расчет выручки за смену</h1>
+
+    <p><strong>Общая выручка за смену:</strong> {{ total_revenue }}₽</p>
+
+    <h2>Оплаченные заказы:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Номер заказа</th>
+                <th>Статус</th>
+                <th>Общая сумма</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in paid_orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>{{ order.total_price }}₽</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</body>
+</html>

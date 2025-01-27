@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Заказы</title>
+</head>
+<body>
+    <h1>Список заказов</h1>
+    <a href="{% url 'orders:order_create' %}">Создать новый заказ</a>
+    <a href="{% url 'orders:revenue_calculation' %}">Выручка</a>
+
+    <!-- Список заказов -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Стол</th>
+                <th>Блюда</th>
+                <th>Стоимость</th>
+                <th>Статус</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.table_number }}</td>
+                <td>
+                    <ul>
+                        {% for order_dish in order.orderdishes.all %}
+                            <li>
+                                {{ order_dish.dish.name }} - {{ order_dish.dish.price }}₽ x {{ order_dish.quantity }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ order.total_price }}₽</td>
+                <td>{{ order.get_status_display }}</td>
+                <td>
+                    <a href="{% url 'orders:order_update' order.id %}">Изменить</a>
+                    <a href="{% url 'orders:order_delete' order.id %}">Удалить</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+
+</body>
+</html>

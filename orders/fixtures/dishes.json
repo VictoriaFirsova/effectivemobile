@@ -1,0 +1,42 @@
+[
+    {
+        "model": "orders.dish",
+        "pk": 1,
+        "fields": {
+            "name": "Салат Цезарь",
+            "price": 350.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 2,
+        "fields": {
+            "name": "Борщ с пампушками",
+            "price": 250.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 3,
+        "fields": {
+            "name": "Шашлык из свинины",
+            "price": 450.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 4,
+        "fields": {
+            "name": "Пицца Маргарита",
+            "price": 500.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 5,
+        "fields": {
+            "name": "Куриный стейк с овощами",
+            "price": 400.00
+        }
+    }
+]
