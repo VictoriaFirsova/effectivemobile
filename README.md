@@ -44,7 +44,7 @@
 Склонируйте проект из репозитория (или если это ваш локальный проект):
 
 ```bash
-git clone <(https://github.com/VictoriaFirsova/effectivemobile/)>
+git clone https://github.com/VictoriaFirsova/effectivemobile -b master 
 cd cafe_management
 ```
 
