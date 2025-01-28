@@ -45,7 +45,7 @@
 
 ```bash
 git clone https://github.com/VictoriaFirsova/effectivemobile -b master 
-cd cafe_management
+cd effectivemobile
 ```
 
 ---
