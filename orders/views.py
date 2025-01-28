@@ -6,9 +6,7 @@ from django.http import  HttpRequest, HttpResponse, HttpResponseRedirect
 from django.views import View
 from .models import Order, Dish, OrderDish
 from .forms import OrderForm, OrderSearchForm
-import logging
 
-logger = logging.getLogger(__name__)
 
 class OrderListView(View):
     """
@@ -37,15 +35,12 @@ class OrderListView(View):
         form = OrderForm()
         search_form = OrderSearchForm(request.GET or None)
         if search_form.is_valid():
-            # Получаем данные формы
             table_number = search_form.cleaned_data.get('table_number')
             status = search_form.cleaned_data.get('status')
 
             if table_number:
-                # Фильтруем список заказов по номеру стола
                 orders = orders.filter(table_number=table_number)
             if status:
-                # Фильтруем список заказов по статусу
                 orders = orders.filter(status=status)
         return render(request, 'order_list.html', {'orders': orders, 'form': form, 'search_form': search_form})
 
@@ -314,25 +309,15 @@ def order_search(request: HttpRequest) -> HttpResponse:
     search_form = OrderSearchForm(request.GET or None)
     orders = Order.objects.all()
 
-    # Логируем данные запроса и состояние формы
-    logger.debug(f"GET параметры: {request.GET}")
-    logger.debug(f"Форма создана: {search_form}")
-
     if search_form.is_valid():
-        # Получаем данные формы
         table_number = search_form.cleaned_data.get('table_number')
         status = search_form.cleaned_data.get('status')
 
         if table_number:
-            # Фильтруем заказы по номеру стола
             orders = orders.filter(table_number=table_number)
         if status:
-            # Фильтруем заказы по статусу
             orders = orders.filter(status=status)
-    else:
-        logger.error(f"Ошибки в форме: {search_form.errors}")
 
-    # Передаем контекст в шаблон
     context = {
         'search_form': search_form,
         'orders': orders,
