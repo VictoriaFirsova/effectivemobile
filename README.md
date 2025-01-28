@@ -91,7 +91,9 @@ python manage.py migrate
 Можно добавить тестовые данные для проверки работы приложения. Если в проекте есть готовый файл `fixtures.json` для загрузки данных, используйте:
 
 ```bash
-python manage.py loaddata fixtures.json
+python manage.py loaddata dishes.json
+python manage.py loaddata orders.json
+python manage.py loaddata order_dishes.json
 ```
 
 Если данных нет, вы можете добавить их через админ-панель (см. ниже).
