@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>Заказы</title>
 </head>
 <body>
@@ -48,8 +46,8 @@
                 <td>{{ order.total_price }}₽</td>
                 <td>{{ order.get_status_display }}</td>
                 <td>
-                    <a href="{% url 'orders:order_update' order.id %}">Изменить</a>
-                    <a href="{% url 'orders:order_delete' order.id %}">Удалить</a>
+                    <a href="{% url 'orders:order_update' order.id %}">Изменить</a> |
+                    <a href="{% url 'orders:order_delete' order.id %}" onclick="return confirm('Удалить заказ?');">Удалить</a>
                 </td>
             </tr>
         {% endfor %}

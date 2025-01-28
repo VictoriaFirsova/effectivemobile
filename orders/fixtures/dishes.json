@@ -38,5 +38,125 @@
             "name": "Куриный стейк с овощами",
             "price": 400.00
         }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 6,
+        "fields": {
+            "name": "Томатный суп с креветками",
+            "price": 300.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 7,
+        "fields": {
+            "name": "Паста Карбонара",
+            "price": 450.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 8,
+        "fields": {
+            "name": "Кебаб из баранины",
+            "price": 500.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 9,
+        "fields": {
+            "name": "Сэндвич с тунцом",
+            "price": 250.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 10,
+        "fields": {
+            "name": "Наполеон",
+            "price": 150.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 11,
+        "fields": {
+            "name": "Фреш-роллы с уткой",
+            "price": 350.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 12,
+        "fields": {
+            "name": "Ризотто с грибами",
+            "price": 400.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 13,
+        "fields": {
+            "name": "Чизкейк Нью-Йорк",
+            "price": 300.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 14,
+        "fields": {
+            "name": "Капучино",
+            "price": 150.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 15,
+        "fields": {
+            "name": "Медовик",
+            "price": 200.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 16,
+        "fields": {
+            "name": "Куриный крем-суп",
+            "price": 250.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 17,
+        "fields": {
+            "name": "Отбивная из индейки",
+            "price": 450.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 18,
+        "fields": {
+            "name": "Судак в сливочном соусе",
+            "price": 500.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 19,
+        "fields": {
+            "name": "Мороженое пломбир",
+            "price": 100.00
+        }
+    },
+    {
+        "model": "orders.dish",
+        "pk": 20,
+        "fields": {
+            "name": "Чай зелёный",
+            "price": 100.00
+        }
     }
 ]

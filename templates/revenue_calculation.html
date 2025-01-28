@@ -7,27 +7,32 @@
 <body>
     <h1>Расчет выручки за смену</h1>
 
-    <p><strong>Общая выручка за смену:</strong> {{ total_revenue }}₽</p>
+    <h1>Общая выручка: {{ total_revenue|default:"0.00" }}</h1>
 
-    <h2>Оплаченные заказы:</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Номер заказа</th>
-                <th>Статус</th>
-                <th>Общая сумма</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for order in paid_orders %}
-                <tr>
-                    <td>{{ order.id }}</td>
-                    <td>{{ order.status }}</td>
-                    <td>{{ order.total_price }}₽</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Номер стола</th>
+            <th>Статус</th>
+            <th>Итоговая сумма</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in paid_orders %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.table_number }}</td>
+            <td>Оплачено</td>
+            <td>{{ order.total_price }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">Нет оплаченных заказов</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 
 </body>

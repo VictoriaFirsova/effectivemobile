@@ -291,10 +291,12 @@ def revenue_calculation(request):
     :rtype: HttpResponse
     """
     paid_orders = Order.objects.filter(status='paid')
-    total_revenue = sum(order.total_price for order in paid_orders)
+    total_revenue = paid_orders.aggregate(Sum('total_price'))['total_price__sum'] or 0
 
-    return render(request, 'revenue_calculation.html', {'total_revenue': total_revenue, 'paid_orders': paid_orders})
-
+    return render(request, 'revenue_calculation.html', {
+        'total_revenue': total_revenue,
+        'paid_orders': paid_orders
+    })
 
 def order_search(request: HttpRequest) -> HttpResponse:
     """

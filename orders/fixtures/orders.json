@@ -4,13 +4,8 @@
         "pk": 1,
         "fields": {
             "table_number": 1,
-            "items": [
-                {"name": "Салат Цезарь", "price": 12.99},
-                {"name": "Паста Карбонара", "price": 15.49}
-            ],
-            "total_price": 28.48,
+            "total_price": 1150.00,
             "status": "pending"
-
         }
     },
     {
@@ -18,11 +13,34 @@
         "pk": 2,
         "fields": {
             "table_number": 2,
-            "items": [
-                {"name": "Бургер", "price": 8.50},
-                {"name": "Картофель фри", "price": 3.50}
-            ],
-            "total_price": 12.00,
+            "total_price": 550.00,
+            "status": "ready"
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 3,
+        "fields": {
+            "table_number": 3,
+            "total_price": 800.00,
+            "status": "paid"
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 4,
+        "fields": {
+            "table_number": 4,
+            "total_price": 1200.00,
+            "status": "pending"
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 5,
+        "fields": {
+            "table_number": 5,
+            "total_price": 400.00,
             "status": "ready"
         }
     }
