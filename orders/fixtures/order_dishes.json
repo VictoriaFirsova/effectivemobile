@@ -1,0 +1,101 @@
+[
+    {
+        "model": "orders.orderdish",
+        "pk": 1,
+        "fields": {
+            "order": 1,
+            "dish": 1,
+            "quantity": 2
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 2,
+        "fields": {
+            "order": 1,
+            "dish": 7,
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 3,
+        "fields": {
+            "order": 2,
+            "dish": 2,
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 4,
+        "fields": {
+            "order": 2,
+            "dish": 14,
+            "quantity": 2
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 5,
+        "fields": {
+            "order": 3,
+            "dish": 5,
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 6,
+        "fields": {
+            "order": 3,
+            "dish": 12,
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 7,
+        "fields": {
+            "order": 4,
+            "dish": 3,
+            "quantity": 2
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 8,
+        "fields": {
+            "order": 4,
+            "dish": 13,
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 9,
+        "fields": {
+            "order": 5,
+            "dish": 10,
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 10,
+        "fields": {
+            "order": 5,
+            "dish": 20,
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderdish",
+        "pk": 11,
+        "fields": {
+            "order": 5,
+            "dish": 19,
+            "quantity": 2
+        }
+    }
+]
