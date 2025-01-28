@@ -81,7 +81,7 @@ pip install -r requirements.txt
 Подготовьте базу данных, применив миграции:
 
 ```bash
-python manage.py migrate
+python manage.py migrate --run-syncdb
 ```
 
 ---
